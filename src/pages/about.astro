@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import { getCollection } from 'astro:content';
+
+const experts = (await getCollection('about')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="About | SecureSync Labs"
+	description="SecureSync Labs is a UK cyber security consultancy and software studio, founded in 2023 to deliver practical security consulting and internal security tooling."
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-20">
+			<div class="about">
+				<Hero
+					title="About"
+					tagline="A small UK consultancy that combines cyber security consulting with the software needed to run it."
+				/>
+
+				<section>
+					<h2 class="section-title">Background</h2>
+					<div class="content">
+						<p>
+							SecureSync Labs was established in December 2023. The brief was simple: cut through
+							the jargon and deliver practical security work — assessments, advice, and software —
+							for organisations that cannot afford to operate blind.
+						</p>
+						<p>
+							We work across consulting and product. On the consulting side that means penetration
+							testing, cloud security, incident response, secure development, and helping teams
+							understand what findings actually mean. On the product side we build internal
+							security platforms, including an attack surface management tool that starts from
+							authoritative internal data rather than guessing from the outside.
+						</p>
+						<p>
+							The company is still deliberately small. Clients get a practitioner who has led
+							security work in regulated environments, hired and managed teams, and shipped
+							software — not a revolving door of junior resource.
+						</p>
+					</div>
+				</section>
+			</div>
+
+			<section class="team stack gap-8">
+				<Hero
+					title="Our people"
+					tagline="Click through to read about experience, skills, and the work we do at SecureSync Labs."
+					align="start"
+				/>
+				<Grid variant="offset">
+					{
+						experts.map((expert) => (
+							<li>
+								<PortfolioPreview experts={expert} />
+							</li>
+						))
+					}
+				</Grid>
+			</section>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content p + p {
+		margin-top: 1rem;
+	}
+
+	.team {
+		color: var(--gray-200);
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		.about section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

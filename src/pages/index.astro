@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import Pill from '../components/Pill.astro';
+import Skills from '../components/Skills.astro';
+
+const capabilities = [
+	{
+		title: 'Inside-out inventory',
+		body: 'DNS, IP, and cloud records from on-premises and cloud environments, aggregated so you know where the estate actually lives.',
+	},
+	{
+		title: 'External enrichment',
+		body: 'Internal inventory combined with telemetry from platforms such as Tenable and BitSight, rather than treating those feeds as the whole picture.',
+	},
+	{
+		title: 'Scanning at scale',
+		body: 'Built-in Nuclei scanning with AWS workers that can assess tens of thousands of applications in a short window.',
+	},
+];
+---
+
+<BaseLayout
+	title="SecureSync Labs | Cyber security consulting and software"
+	description="UK cyber security consultancy and software studio. Penetration testing, cloud security, secure development, and attack surface management."
+>
+	<div class="stack gap-20 lg:gap-48">
+		<div class="wrapper stack gap-8 lg:gap-20">
+			<header class="hero">
+				<Hero
+					title="SecureSync Labs"
+					tagline="Cyber security consulting and software development for organisations that need practical, no-nonsense protection."
+					align="start"
+				>
+					<div class="roles">
+						<Pill><Icon icon="person" size="1.33em" /> Security consulting</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Security software</Pill>
+						<Pill><Icon icon="strategy" size="1.33em" /> Attack surface management</Pill>
+					</div>
+					<div class="hero-actions">
+						<CallToAction href="/services/">
+							What we do
+							<Icon icon="arrow-right" size="1.2em" />
+						</CallToAction>
+					</div>
+				</Hero>
+			</header>
+
+			<Skills />
+		</div>
+
+		<main class="wrapper stack gap-20 lg:gap-48">
+			<section class="section with-background">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Attack surface management, from the inside out</h3>
+					<p>
+						Most attack surface tools try to discover what you have from the outside. That leaves
+						gaps. We built an internal platform that starts with what the organisation already knows
+						— then enriches and scans it — so security teams are not operating blind.
+					</p>
+				</header>
+
+				<ul class="capability-grid">
+					{
+						capabilities.map((item) => (
+							<li class="capability-card">
+								<h4>{item.title}</h4>
+								<p>{item.body}</p>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>How we work</h3>
+					<p>
+						SecureSync Labs was founded in 2023. We keep the work practical: clear findings, secure
+						delivery, and software that fits how security teams already operate.
+					</p>
+				</header>
+
+				<ul class="mention-grid">
+					{
+						[
+							{
+								title: 'Hands-on',
+								body: 'Assessments, code, and architecture — not slideware.',
+							},
+							{
+								title: 'Embedded',
+								body: 'We work with delivery teams, not around them.',
+							},
+							{
+								title: 'Regulated-ready',
+								body: 'Experience across financial services, legal, energy, education, and government.',
+							},
+							{
+								title: 'UK-based',
+								body: 'A small consultancy that can move quickly without the overhead of a large firm.',
+							},
+						].map((item) => (
+							<li class="mention-card">
+								<p class="mention-title">{item.title}</p>
+								<p>{item.body}</p>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.roles {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		justify-content: center;
+	}
+
+	.hero-actions {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: center;
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			padding-inline: 2.5rem;
+		}
+
+		.roles,
+		.hero-actions {
+			justify-content: flex-start;
+		}
+
+		.roles {
+			margin-top: 0.5rem;
+		}
+	}
+
+	.section {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.with-background {
+		position: relative;
+	}
+
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
+
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 0;
+		transform: translateY(-75%) translateX(-50%);
+		background:
+			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 54ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+	}
+
+	.capability-grid,
+	.mention-grid {
+		display: grid;
+		gap: 1rem;
+		padding: 0;
+		list-style: none;
+	}
+
+	.capability-card,
+	.mention-card {
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		padding: 1.5rem;
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+		color: var(--gray-300);
+	}
+
+	.capability-card h4,
+	.mention-title {
+		margin: 0 0 0.5rem;
+		color: var(--gray-0);
+		font-family: var(--font-brand);
+		font-size: var(--text-lg);
+	}
+
+	@media (min-width: 50em) {
+		.section-header {
+			font-size: var(--text-lg);
+		}
+
+		.section-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.capability-grid,
+		.mention-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+		}
+
+		.capability-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.capability-card,
+		.mention-card {
+			padding: 2rem;
+		}
+	}
+</style>

@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+
+const consulting = [
+	{
+		title: 'Penetration testing',
+		body: 'Web applications, web services, infrastructure, and red team exercises designed to test whether controls actually work.',
+	},
+	{
+		title: 'Cloud security',
+		body: 'Architecture, configuration, and tooling across Azure and AWS — including rolling out standards that teams can actually follow.',
+	},
+	{
+		title: 'Secure software delivery',
+		body: 'SecDevOps, secure SDLC pipelines, static analysis, and source code review so applications are built securely rather than tested at the end.',
+	},
+	{
+		title: 'Incident response',
+		body: 'Investigation, triage, and working alongside in-house teams when something has already gone wrong.',
+	},
+	{
+		title: 'Threat intelligence and architecture',
+		body: 'Network design, threat intelligence, and practical advice on IT projects in regulated environments.',
+	},
+	{
+		title: 'Compliance support',
+		body: 'Helping organisations understand the impact of findings and meet regulatory expectations without drowning in paperwork.',
+	},
+];
+
+const software = [
+	{
+		title: 'Attack surface management',
+		body: 'An inside-out platform that aggregates DNS from on-premises and cloud, combines IP, DNS, and cloud inventory, and enriches it with external sources such as Tenable and BitSight.',
+	},
+	{
+		title: 'Large-scale scanning',
+		body: 'Built-in Nuclei scanning with AWS workers that can assess tens of thousands of applications in a short period.',
+	},
+	{
+		title: 'Security automation',
+		body: 'Replacing manual processes with reliable tooling so security teams spend less time copying data between systems.',
+	},
+	{
+		title: 'Secure development',
+		body: 'Python, Java, PowerShell, VBA, C#, and JavaScript — including review of existing code and building new internal tools.',
+	},
+];
+---
+
+<BaseLayout
+	title="Services | SecureSync Labs"
+	description="Cyber security consulting, secure software development, and attack surface management from SecureSync Labs."
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-16">
+			<Hero
+				title="Services"
+				tagline="Consulting when you need an experienced practitioner. Software when the problem is bigger than a report."
+				align="start"
+			/>
+
+			<section class="stack gap-6">
+				<div class="section-heading">
+					<Icon icon="person" color="var(--accent-regular)" size="2rem" gradient />
+					<h2>Cyber security consulting</h2>
+				</div>
+				<p class="lede">
+					Assessments and advice across offensive testing, cloud, secure development, and response.
+					We write reports that non-specialists can act on, and we stay close to the teams doing the
+					work.
+				</p>
+				<ul class="service-grid">
+					{
+						consulting.map((item) => (
+							<li>
+								<h3>{item.title}</h3>
+								<p>{item.body}</p>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="stack gap-6">
+				<div class="section-heading">
+					<Icon icon="code" color="var(--accent-regular)" size="2rem" gradient />
+					<h2>Software development</h2>
+				</div>
+				<p class="lede">
+					We build internal security software for organisations that have outgrown spreadsheets and
+					disconnected scanners. The flagship work is an attack surface management platform designed
+					so you are not guessing at what you own.
+				</p>
+				<ul class="service-grid">
+					{
+						software.map((item) => (
+							<li>
+								<h3>{item.title}</h3>
+								<p>{item.body}</p>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.section-heading {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.section-heading h2 {
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+	}
+
+	.lede {
+		max-width: 65ch;
+		color: var(--gray-300);
+		font-size: var(--text-md);
+	}
+
+	.service-grid {
+		display: grid;
+		gap: 1rem;
+		padding: 0;
+		list-style: none;
+	}
+
+	.service-grid li {
+		border: 1px solid var(--gray-800);
+		border-radius: 1.25rem;
+		padding: 1.5rem;
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.service-grid h3 {
+		margin: 0 0 0.5rem;
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+	}
+
+	.service-grid p {
+		color: var(--gray-300);
+	}
+
+	@media (min-width: 50em) {
+		.section-heading h2 {
+			font-size: var(--text-3xl);
+		}
+
+		.lede {
+			font-size: var(--text-lg);
+		}
+
+		.service-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+		}
+
+		.service-grid li {
+			padding: 2rem;
+		}
+	}
+</style>
