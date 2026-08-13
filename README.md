@@ -2,7 +2,7 @@
 
 Brochure site for [SecureSync Labs](https://www.securesynclabs.com), a UK cyber security consultancy.
 
-Built with [Astro](https://astro.build) and deployed to GitHub Pages from `main`.
+Built with [Astro](https://astro.build) and deployed to GitHub Pages from `main` / `latest`.
 
 ## Commands
 
