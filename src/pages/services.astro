@@ -10,6 +10,10 @@ const consulting = [
 		body: 'Web applications, web services, infrastructure, and red team exercises designed to test whether controls actually work.',
 	},
 	{
+		title: 'Attack surface management',
+		body: 'A clear view of what you own and where the risk sits — using the data you already have, not only what can be seen from the public internet. When you need more than a review, we also build software to keep that picture current.',
+	},
+	{
 		title: 'Cloud security',
 		body: 'Architecture, configuration, and tooling across Azure and AWS — including rolling out standards that teams can actually follow.',
 	},
@@ -23,55 +27,51 @@ const consulting = [
 	},
 	{
 		title: 'Threat intelligence and architecture',
-		body: 'Network design, threat intelligence, and practical advice on IT projects in regulated environments.',
-	},
-	{
-		title: 'Compliance support',
-		body: 'Helping organisations understand the impact of findings and meet regulatory expectations without drowning in paperwork.',
+		body: 'Network design, threat intelligence, and practical advice on IT and security projects.',
 	},
 ];
 
 const software = [
 	{
-		title: 'Attack surface management',
-		body: 'An inside-out platform that aggregates DNS from on-premises and cloud, combines IP, DNS, and cloud inventory, and enriches it with external sources such as Tenable and BitSight.',
+		title: 'Custom integrations',
+		body: 'We connect to the security tools you already have so that data can be used to judge risk on assets. That might mean internal vulnerability scanning to understand exposure, or Akamai and Cloudflare to see whether a WAF is in place that could mitigate a finding. The work is custom — if you run it, we can integrate with it.',
 	},
 	{
-		title: 'Large-scale scanning',
-		body: 'Built-in Nuclei scanning with AWS workers that can assess tens of thousands of applications in a short period.',
+		title: 'Attack surface software',
+		body: 'Software built around an inside-out view of the estate: DNS, IP, and cloud inventory from on-premises and cloud, combined with the tools you already operate, so you are not guessing at what you own.',
+	},
+	{
+		title: 'Scanning at scale',
+		body: 'When the estate is large, we can add scanning that scales in the cloud so tens of thousands of applications can be assessed in a short window.',
 	},
 	{
 		title: 'Security automation',
 		body: 'Replacing manual processes with reliable tooling so security teams spend less time copying data between systems.',
-	},
-	{
-		title: 'Secure development',
-		body: 'Python, Java, PowerShell, VBA, C#, and JavaScript — including review of existing code and building new internal tools.',
 	},
 ];
 ---
 
 <BaseLayout
 	title="Services | SecureSync Labs"
-	description="Cyber security consulting, secure software development, and attack surface management from SecureSync Labs."
+	description="Cyber security consulting and attack surface management from SecureSync Labs. Custom software and integrations where they help."
 >
 	<div class="stack gap-20">
-		<main class="wrapper stack gap-16">
+		<main class="wrapper services stack gap-20">
 			<Hero
 				title="Services"
-				tagline="Consulting when you need an experienced practitioner. Software when the problem is bigger than a report."
+				tagline="Consulting first. Software when the problem is bigger than a report, and only in a way that fits the tools you already have."
 				align="start"
 			/>
 
-			<section class="stack gap-6">
+			<section class="stack gap-8">
 				<div class="section-heading">
 					<Icon icon="person" color="var(--accent-regular)" size="2rem" gradient />
 					<h2>Cyber security consulting</h2>
 				</div>
 				<p class="lede">
-					Assessments and advice across offensive testing, cloud, secure development, and response.
-					We write reports that non-specialists can act on, and we stay close to the teams doing the
-					work.
+					Assessments and advice across offensive testing, cloud, attack surface, secure
+					development, and response. We write reports that non-specialists can act on, and we stay
+					close to the teams doing the work.
 				</p>
 				<ul class="service-grid">
 					{
@@ -85,15 +85,15 @@ const software = [
 				</ul>
 			</section>
 
-			<section class="stack gap-6">
+			<section class="stack gap-8">
 				<div class="section-heading">
 					<Icon icon="code" color="var(--accent-regular)" size="2rem" gradient />
-					<h2>Software development</h2>
+					<h2>Software for clients</h2>
 				</div>
 				<p class="lede">
-					We build internal security software for organisations that have outgrown spreadsheets and
-					disconnected scanners. The flagship work is an attack surface management platform designed
-					so you are not guessing at what you own.
+					We build security software for organisations when off-the-shelf tools leave gaps. That is
+					client work, not a product we sell off the shelf — designed around the tooling you already
+					run, with custom integrations so existing data can be used to understand risk.
 				</p>
 				<ul class="service-grid">
 					{
@@ -112,49 +112,71 @@ const software = [
 </BaseLayout>
 
 <style>
+	.services {
+		padding-block: 0.5rem;
+		padding-inline: 1.5rem;
+	}
+
+	@media (min-width: 50em) {
+		.services {
+			padding-inline: 2.5rem;
+		}
+	}
+
 	.section-heading {
 		display: flex;
-		align-items: center;
-		gap: 0.75rem;
+		align-items: flex-start;
+		gap: 1rem;
 	}
 
 	.section-heading h2 {
 		font-size: var(--text-2xl);
+		line-height: 1.2;
 		color: var(--gray-0);
 	}
 
 	.lede {
-		max-width: 65ch;
+		max-width: 70ch;
 		color: var(--gray-300);
 		font-size: var(--text-md);
+		line-height: 1.6;
 	}
 
 	.service-grid {
 		display: grid;
-		gap: 1rem;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
 		padding: 0;
 		list-style: none;
 	}
 
 	.service-grid li {
 		border: 1px solid var(--gray-800);
-		border-radius: 1.25rem;
-		padding: 1.5rem;
+		border-radius: 1.5rem;
+		padding: 1.75rem 1.75rem 2rem;
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
+		min-height: 11rem;
 	}
 
 	.service-grid h3 {
-		margin: 0 0 0.5rem;
-		font-size: var(--text-lg);
+		margin: 0 0 0.85rem;
+		font-size: var(--text-xl);
+		line-height: 1.3;
 		color: var(--gray-0);
 	}
 
 	.service-grid p {
 		color: var(--gray-300);
+		font-size: var(--text-md);
+		line-height: 1.6;
 	}
 
 	@media (min-width: 50em) {
+		.section-heading {
+			align-items: center;
+		}
+
 		.section-heading h2 {
 			font-size: var(--text-3xl);
 		}
@@ -162,14 +184,16 @@ const software = [
 		.lede {
 			font-size: var(--text-lg);
 		}
+	}
 
+	@media (min-width: 72em) {
 		.service-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1.5rem;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2rem;
 		}
 
 		.service-grid li {
-			padding: 2rem;
+			padding: 2.25rem 2.5rem 2.5rem;
 		}
 	}
 </style>

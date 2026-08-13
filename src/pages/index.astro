@@ -6,43 +6,28 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import Skills from '../components/Skills.astro';
-
-const capabilities = [
-	{
-		title: 'Inside-out inventory',
-		body: 'DNS, IP, and cloud records from on-premises and cloud environments, aggregated so you know where the estate actually lives.',
-	},
-	{
-		title: 'External enrichment',
-		body: 'Internal inventory combined with telemetry from platforms such as Tenable and BitSight, rather than treating those feeds as the whole picture.',
-	},
-	{
-		title: 'Scanning at scale',
-		body: 'Built-in Nuclei scanning with AWS workers that can assess tens of thousands of applications in a short window.',
-	},
-];
 ---
 
 <BaseLayout
-	title="SecureSync Labs | Cyber security consulting and software"
-	description="UK cyber security consultancy and software studio. Penetration testing, cloud security, secure development, and attack surface management."
+	title="SecureSync Labs | Cyber security consulting"
+	description="UK cyber security consultancy led by practitioners with more than a decade of experience. Penetration testing, cloud security, incident response, and attack surface management."
 >
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
 					title="SecureSync Labs"
-					tagline="Cyber security consulting and software development for organisations that need practical, no-nonsense protection."
+					tagline="Hands-on cyber security consulting from people who have led the work inside organisations, not just written about it."
 					align="start"
 				>
 					<div class="roles">
 						<Pill><Icon icon="person" size="1.33em" /> Security consulting</Pill>
-						<Pill><Icon icon="code" size="1.33em" /> Security software</Pill>
 						<Pill><Icon icon="strategy" size="1.33em" /> Attack surface management</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Cloud and engineering</Pill>
 					</div>
 					<div class="hero-actions">
-						<CallToAction href="/services/">
-							What we do
+						<CallToAction href="/about/charlie-dean/">
+							Meet Charlie
 							<Icon icon="arrow-right" size="1.2em" />
 						</CallToAction>
 					</div>
@@ -55,23 +40,37 @@ const capabilities = [
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Attack surface management, from the inside out</h3>
+					<h3>Experience you can put to work</h3>
 					<p>
-						Most attack surface tools try to discover what you have from the outside. That leaves
-						gaps. We built an internal platform that starts with what the organisation already knows
-						— then enriches and scans it — so security teams are not operating blind.
+						SecureSync Labs is led by Charlie Dean, a practitioner with more than ten years across
+						consulting and in-house security leadership. The work is practical: assessments, advice,
+						and embedding with the teams who have to fix what we find.
 					</p>
 				</header>
 
 				<ul class="capability-grid">
-					{
-						capabilities.map((item) => (
-							<li class="capability-card">
-								<h4>{item.title}</h4>
-								<p>{item.body}</p>
-							</li>
-						))
-					}
+					<li class="capability-card">
+						<h4>In-house security leadership</h4>
+						<p>
+							Several years leading security inside a UK financial services organisation — cloud
+							security, product security, incident response, and managing a team.
+						</p>
+					</li>
+					<li class="capability-card">
+						<h4>Independent consulting</h4>
+						<p>
+							Penetration testing, vulnerability assessment, and security advice across financial
+							services, legal, energy, education, and government.
+						</p>
+					</li>
+					<li class="capability-card">
+						<h4>Attack surface management</h4>
+						<p>
+							Helping organisations understand what they actually own, where the risk sits, and how
+							existing controls change that picture — not a scan of the public internet and a hope
+							that nothing was missed.
+						</p>
+					</li>
 				</ul>
 			</section>
 
@@ -79,8 +78,8 @@ const capabilities = [
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>How we work</h3>
 					<p>
-						SecureSync Labs was founded in 2023. We keep the work practical: clear findings, secure
-						delivery, and software that fits how security teams already operate.
+						SecureSync Labs was founded in 2023. It is deliberately small: you work with someone who
+						has done the job, hired the team, and stayed close to the delivery.
 					</p>
 				</header>
 
@@ -89,15 +88,15 @@ const capabilities = [
 						[
 							{
 								title: 'Hands-on',
-								body: 'Assessments, code, and architecture — not slideware.',
+								body: 'Assessments, architecture, and engineering — not slideware.',
 							},
 							{
 								title: 'Embedded',
 								body: 'We work with delivery teams, not around them.',
 							},
 							{
-								title: 'Regulated-ready',
-								body: 'Experience across financial services, legal, energy, education, and government.',
+								title: 'Clear findings',
+								body: 'Risk explained in plain language, with a path to fix it.',
 							},
 							{
 								title: 'UK-based',
@@ -190,20 +189,22 @@ const capabilities = [
 	.section-header {
 		justify-self: center;
 		text-align: center;
-		max-width: 54ch;
+		max-width: 58ch;
 		font-size: var(--text-md);
 		color: var(--gray-300);
+		line-height: 1.5;
 	}
 
 	.section-header h3 {
 		font-size: var(--text-2xl);
 		color: var(--gray-0);
+		line-height: 1.15;
 	}
 
 	.capability-grid,
 	.mention-grid {
 		display: grid;
-		gap: 1rem;
+		gap: 1.25rem;
 		padding: 0;
 		list-style: none;
 	}
@@ -212,21 +213,27 @@ const capabilities = [
 	.mention-card {
 		border: 1px solid var(--gray-800);
 		border-radius: 1.5rem;
-		padding: 1.5rem;
+		padding: 1.75rem;
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
 		color: var(--gray-300);
+		line-height: 1.5;
 	}
 
 	.capability-card h4,
 	.mention-title {
-		margin: 0 0 0.5rem;
+		margin: 0 0 0.75rem;
 		color: var(--gray-0);
 		font-family: var(--font-brand);
 		font-size: var(--text-lg);
+		line-height: 1.25;
 	}
 
 	@media (min-width: 50em) {
+		.section {
+			gap: 3rem;
+		}
+
 		.section-header {
 			font-size: var(--text-lg);
 		}
@@ -237,17 +244,23 @@ const capabilities = [
 
 		.capability-grid,
 		.mention-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1.5rem;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1.75rem;
 		}
 
 		.capability-grid {
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 
 		.capability-card,
 		.mention-card {
-			padding: 2rem;
+			padding: 2.25rem;
+		}
+	}
+
+	@media (max-width: 70em) {
+		.capability-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>

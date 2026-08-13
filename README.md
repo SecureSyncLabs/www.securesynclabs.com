@@ -1,6 +1,6 @@
 # SecureSync Labs
 
-Brochure site for [SecureSync Labs](https://www.securesynclabs.com), a UK cyber security consultancy and software studio.
+Brochure site for [SecureSync Labs](https://www.securesynclabs.com), a UK cyber security consultancy.
 
 Built with [Astro](https://astro.build) and deployed to GitHub Pages from the `latest` branch.
 

@@ -13,14 +13,14 @@ const experts = (await getCollection('about')).sort(
 
 <BaseLayout
 	title="About | SecureSync Labs"
-	description="SecureSync Labs is a UK cyber security consultancy and software studio, founded in 2023 to deliver practical security consulting and internal security tooling."
+	description="SecureSync Labs is a UK cyber security consultancy, founded in 2023 to deliver practical security consulting and, where it helps, custom software for clients."
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-20">
 			<div class="about">
 				<Hero
 					title="About"
-					tagline="A small UK consultancy that combines cyber security consulting with the software needed to run it."
+					tagline="A small UK consultancy built around hands-on cyber security experience."
 				/>
 
 				<section>
@@ -28,20 +28,19 @@ const experts = (await getCollection('about')).sort(
 					<div class="content">
 						<p>
 							SecureSync Labs was established in December 2023. The brief was simple: cut through
-							the jargon and deliver practical security work — assessments, advice, and software —
-							for organisations that cannot afford to operate blind.
+							the jargon and deliver practical security work — assessments, advice, and the
+							engineering needed to act on it.
 						</p>
 						<p>
-							We work across consulting and product. On the consulting side that means penetration
-							testing, cloud security, incident response, secure development, and helping teams
-							understand what findings actually mean. On the product side we build internal
-							security platforms, including an attack surface management tool that starts from
-							authoritative internal data rather than guessing from the outside.
+							Consulting comes first: penetration testing, cloud security, incident response, secure
+							development, and attack surface management. Where organisations need more than a
+							point-in-time review, we also build software for clients — including custom
+							integrations with the security tools they already run.
 						</p>
 						<p>
-							The company is still deliberately small. Clients get a practitioner who has led
-							security work in regulated environments, hired and managed teams, and shipped
-							software — not a revolving door of junior resource.
+							The company is deliberately small. Clients work with a practitioner who has led
+							security teams, hired people, and stayed close to delivery — not a revolving door of
+							junior resource.
 						</p>
 					</div>
 				</section>
@@ -90,6 +89,7 @@ const experts = (await getCollection('about')).sort(
 
 	.content {
 		grid-column: 2 / 4;
+		line-height: 1.55;
 	}
 
 	.content p + p {

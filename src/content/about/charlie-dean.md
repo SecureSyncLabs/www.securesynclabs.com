@@ -8,20 +8,19 @@ description: Founder of SecureSync Labs. Principal consultant covering security 
 tags:
   - Founder
   - Security Consultant
-  - Software Developer
 ---
 
 ## Role at SecureSync Labs
 
-Charlie founded SecureSync Labs in 2023 to combine hands-on cyber security consulting with the kind of internal tooling that security teams actually need to run.
+Charlie founded SecureSync Labs in 2023 to do hands-on cyber security consulting — the kind of work he had already been doing for more than a decade, without the overhead of a large firm.
 
-He leads client engagements and also designs and builds software. That includes an internal attack surface management platform used to give organisations an inside-out view of their estate — aggregating DNS, IP, and cloud inventory, enriching it with external telemetry, and scanning at scale.
+He leads client engagements across testing, cloud, incident response, and attack surface management. Where organisations need software as well as advice, he also designs and builds it for them, including custom integrations with the tools they already run.
 
 ## About
 
-Charlie is a cyber security practitioner with more than a decade of experience across consulting and in-house security leadership. His work sits at the overlap of offensive testing, secure engineering, cloud security, and building software that makes those disciplines repeatable.
+Charlie is a cyber security practitioner with more than a decade of experience across consulting and in-house security leadership. His work sits at the overlap of offensive testing, secure engineering, cloud security, and making those disciplines repeatable.
 
-He is used to operating in regulated environments, explaining risk in plain language, and embedding with delivery teams rather than throwing findings over the wall.
+He is used to explaining risk in plain language and embedding with delivery teams rather than throwing findings over the wall.
 
 ## Core skills
 
@@ -39,9 +38,10 @@ He is used to operating in regulated environments, explaining risk in plain lang
 - Network architecture and configuration
 - SecDevOps and secure software delivery
 - Windows and Linux systems
-- Secure development and source code review in Python, Java, PowerShell, VBA, C#, and JavaScript, including automation and working with large data sets
+- Secure development, source code review, and automation
 - Azure and AWS cloud platforms, including how to secure them
 - Incident response and investigation
+- Custom integrations with existing security tooling
 
 ## Experience
 
@@ -49,9 +49,9 @@ He is used to operating in regulated environments, explaining risk in plain lang
 
 Charlie spent several years leading security work inside a UK financial services organisation, covering cloud, product security, and operational response.
 
-That included rolling out security tooling and standards across Azure and AWS; standing up a secure software development lifecycle so applications were built with security controls in the pipeline; and deploying and operating platforms such as Microsoft Defender, Akamai, Prisma Cloud, Qualys, and Veracode.
+That included rolling out security tooling and standards across Azure and AWS; standing up a secure software development lifecycle so applications were built with security controls in the pipeline; and deploying and operating a range of enterprise security platforms.
 
-He ran annual penetration tests and assessments when new functionality was introduced, planned red team exercises to test whether controls actually worked, and worked with the blue team to investigate and triage incidents. He also acted as an embedded security specialist across business projects, automated manual processes to reduce error, and used Microsoft reporting tools including Power BI to make security data usable.
+He ran annual penetration tests and assessments when new functionality was introduced, planned red team exercises to test whether controls actually worked, and worked with the blue team to investigate and triage incidents. He also acted as an embedded security specialist across business projects, automated manual processes to reduce error, and improved how security data was analysed and reported.
 
 He was promoted into a management role, completed managerial training, and led a team of five. That included interviewing and hiring for critical roles, and upskilling industrial placements and apprentices.
 
@@ -59,14 +59,14 @@ He was promoted into a management role, completed managerial training, and led a
 
 Before that, Charlie spent several years as a security consultant delivering detailed assessments across financial services, legal, energy, education, and government.
 
-Typical work included penetration testing of web applications and infrastructure, vulnerability scanning, writing technical reports for a wide range of audiences, advising on IT projects, and helping organisations understand the practical impact of findings and meet regulatory expectations.
+Typical work included penetration testing of web applications and infrastructure, vulnerability scanning, writing technical reports for a wide range of audiences, advising on IT projects, and helping organisations understand the practical impact of findings.
 
-He also spent several years developing Python tooling in the open, and trained in exploit development and reverse engineering. A longer-term engagement focused on secure development lifecycle and static analysis, helping developers meet secure coding standards in a heavily regulated industry.
+He also spent several years building open-source security tooling, and trained in exploit development and reverse engineering. A longer-term engagement focused on secure development lifecycle and static analysis, helping developers meet secure coding standards.
 
 ### Building SecureSync Labs
 
-Since founding the company, Charlie has been contracting with UK organisations while building SecureSync Labs' own capability.
+Since founding the company, Charlie has been contracting with UK organisations — consulting first, and building custom security software where it helps.
 
-The main product work is an internal attack surface management platform. Instead of trying to discover the estate from the outside and hoping nothing is missed, it takes an inside-out approach: ingesting DNS from on-premises and cloud, combining that with IP, DNS, and cloud inventory, and enriching it with external sources such as Tenable and BitSight.
+That software work has included attack surface management for clients: an inside-out view of the estate, ingesting DNS from on-premises and cloud, combining IP, DNS, and cloud inventory, and integrating with the security tools already in place so that data can be used to judge risk on assets.
 
-The platform also has built-in scanning using open-source Nuclei, with workers that scale in AWS so tens of thousands of applications can be assessed in a short window.
+Those integrations are custom. Internal vulnerability scanning can show exposure on an asset; a WAF such as Akamai or Cloudflare can show whether a finding is already mitigated. The point is not a fixed list of vendors — it is fitting the tooling the organisation already has, including scanning that can scale in the cloud when the estate is large.
