@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CallToAction from '../components/CallToAction.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
@@ -24,12 +23,6 @@ import Skills from '../components/Skills.astro';
 						<Pill><Icon icon="person" size="1.33em" /> Security consulting</Pill>
 						<Pill><Icon icon="strategy" size="1.33em" /> Attack surface management</Pill>
 						<Pill><Icon icon="code" size="1.33em" /> Cloud and engineering</Pill>
-					</div>
-					<div class="hero-actions">
-						<CallToAction href="/about/charlie-dean/">
-							Meet Charlie
-							<Icon icon="arrow-right" size="1.2em" />
-						</CallToAction>
 					</div>
 				</Hero>
 			</header>
@@ -132,24 +125,14 @@ import Skills from '../components/Skills.astro';
 		justify-content: center;
 	}
 
-	.hero-actions {
-		margin-top: 1rem;
-		display: flex;
-		justify-content: center;
-	}
-
 	@media (min-width: 50em) {
 		.hero {
 			padding-inline: 2.5rem;
 		}
 
-		.roles,
-		.hero-actions {
-			justify-content: flex-start;
-		}
-
 		.roles {
 			margin-top: 0.5rem;
+			justify-content: flex-start;
 		}
 	}
 
