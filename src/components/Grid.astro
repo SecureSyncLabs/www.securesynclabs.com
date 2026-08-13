@@ -45,8 +45,8 @@ const { variant } = Astro.props;
 			transform: translateY(var(--row-offset));
 		}
 
-		/* If last row contains only one item, display it in the second column. */
-		.grid.offset > :global(:last-child:nth-child(odd)) {
+		/* Stagger leftover items in a full row, but keep a single card on the left. */
+		.grid.offset > :global(:last-child:nth-child(odd):not(:only-child)) {
 			grid-column: 2 / 3;
 			transform: none;
 		}

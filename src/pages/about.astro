@@ -52,15 +52,17 @@ const experts = (await getCollection('about')).sort(
 					tagline="Click through to read about experience, skills, and the work we do at SecureSync Labs."
 					align="start"
 				/>
-				<Grid variant="offset">
-					{
-						experts.map((expert) => (
-							<li>
-								<PortfolioPreview experts={expert} />
-							</li>
-						))
-					}
-				</Grid>
+				<div class:list={['team-cards', { solo: experts.length === 1 }]}>
+					<Grid variant={experts.length > 1 ? 'offset' : undefined}>
+						{
+							experts.map((expert) => (
+								<li>
+									<PortfolioPreview experts={expert} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
 			</section>
 		</main>
 		<ContactCTA />
@@ -98,6 +100,10 @@ const experts = (await getCollection('about')).sort(
 
 	.team {
 		color: var(--gray-200);
+	}
+
+	.team-cards.solo {
+		max-width: 28rem;
 	}
 
 	@media (min-width: 50em) {

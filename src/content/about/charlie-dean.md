@@ -12,7 +12,7 @@ tags:
 
 ## Role at SecureSync Labs
 
-Charlie founded SecureSync Labs in 2023 to do hands-on cyber security consulting — the kind of work he had already been doing for more than a decade, without the overhead of a large firm.
+Charlie founded SecureSync Labs in 2023 to do hands-on cyber security consulting: the work he had already been doing for more than a decade, without the overhead of a large firm.
 
 He leads client engagements across testing, cloud, incident response, and attack surface management. Where organisations need software as well as advice, he also designs and builds it for them, including custom integrations with the tools they already run.
 
